@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mappa Anni di Piombo</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#007aff" />
+  <style>
+    html,body{height:100%;margin:0;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;}
+    #map{height:calc(100% - 50px);}
+    #search{height:50px;display:flex;background:#f8f8f8;border-bottom:1px solid #ccc;}
+    #search input{flex:1;border:none;padding:0 10px;font-size:16px;}
+    #search button{background:#007aff;color:white;border:none;padding:0 15px;font-size:16px;}
+    @media (prefers-color-scheme: dark){
+      #search{background:#1c1c1e;border-bottom:1px solid #333;}
+      #search input{background:#2c2c2e;color:white;}
+    }
+  </style>
+</head>
+<body>
+<div id="search">
+  <input type="text" id="personInput" placeholder="Cerca persona...">
+  <button onclick="filterByPerson()">Cerca</button>
+</div>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+let eventi = [];
+
+fetch('events.json')
+  .then(res => res.json())
+  .then(data => {
+    eventi = data;
+    initMap();
+    showEvents(eventi);
+  });
+
+let map;
+let markers = [];
+
+function initMap(){
+  map = L.map('map').setView([42.5, 12.5], 6);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18}).addTo(map);
+}
+
+function showEvents(list){
+  markers.forEach(m => map.removeLayer(m));
+  markers = list.map(e => {
+    const popup = `<b>${e.nome} (${e.anno})</b><br>${e.descrizione}<br><i>Persone coinvolte:</i> ${e.persone.join(", ")}`;
+    return L.marker([e.lat, e.lon]).addTo(map).bindPopup(popup);
+  });
+}
+
+function filterByPerson(){
+  const q = document.getElementById("personInput").value.toLowerCase();
+  if (!q) return showEvents(eventi);
+  const filtrati = eventi.filter(e => e.persone.some(p => p.toLowerCase().includes(q)));
+  showEvents(filtrati);
+}
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js').then(() => console.log("Service Worker registrato!"));
+}
+</script>
+</body>
+</html>

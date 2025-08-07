@@ -1,0 +1,76 @@
+[
+  {
+    "nome": "Strage di Piazza Fontana",
+    "data": "1969-12-12",
+    "anno": 1969,
+    "descrizione": "Attentato alla Banca Nazionale dell'Agricoltura a Milano: 17 morti e 88 feriti.",
+    "lat": 45.464211,
+    "lon": 9.189982,
+    "persone": [
+      "Giuseppe Pinelli",
+      "Pietro Valpreda"
+    ]
+  },
+  {
+    "nome": "Uccisione di Antonio Annarumma",
+    "data": "1969-11-19",
+    "anno": 1969,
+    "descrizione": "Il poliziotto Antonio Annarumma viene ucciso durante scontri di piazza a Milano.",
+    "lat": 45.4773,
+    "lon": 9.1815,
+    "persone": [
+      "Antonio Annarumma"
+    ]
+  },
+  {
+    "nome": "Strage di Piazza della Loggia",
+    "data": "1974-05-28",
+    "anno": 1974,
+    "descrizione": "Bomba esplode durante una manifestazione antifascista a Brescia: 8 morti e oltre 100 feriti.",
+    "lat": 45.5399,
+    "lon": 10.2199,
+    "persone": []
+  },
+  {
+    "nome": "Strage del treno Italicus",
+    "data": "1974-08-04",
+    "anno": 1974,
+    "descrizione": "Bomba sul treno Italicus Roma-Monaco nei pressi di Bologna: 12 morti e 48 feriti.",
+    "lat": 44.4949,
+    "lon": 11.3426,
+    "persone": []
+  },
+  {
+    "nome": "Strage di Acca Larenzia",
+    "data": "1978-01-07",
+    "anno": 1978,
+    "descrizione": "Agguato a Roma contro militanti del Movimento Sociale Italiano: 3 morti.",
+    "lat": 41.8574,
+    "lon": 12.5113,
+    "persone": []
+  },
+  {
+    "nome": "Sequestro e assassinio di Aldo Moro",
+    "data": "1978-03-16",
+    "anno": 1978,
+    "descrizione": "Rapimento del presidente della DC Aldo Moro da parte delle Brigate Rosse; il corpo viene ritrovato il 9 maggio.",
+    "lat": 41.9028,
+    "lon": 12.4964,
+    "persone": [
+      "Aldo Moro",
+      "Mario Moretti"
+    ]
+  },
+  {
+    "nome": "Strage della stazione di Bologna",
+    "data": "1980-08-02",
+    "anno": 1980,
+    "descrizione": "Bomba alla stazione ferroviaria di Bologna: 85 morti e oltre 200 feriti.",
+    "lat": 44.505,
+    "lon": 11.3417,
+    "persone": [
+      "Valerio Fioravanti",
+      "Francesca Mambro"
+    ]
+  }
+]
